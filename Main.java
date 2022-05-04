@@ -39,10 +39,11 @@ public class Main {
 			System.out.println(">> 推測する桁数を入力してください(1～9)");
 			// 数字の桁数(1～9)
 			number_digits = scanner.nextInt();
-			if (!(1 <= number_digits && number_digits <= 9)) {
-				System.out.println("＊number_digitsの値が不正です。");
-			} else {
+			if (1 <= number_digits && number_digits <= 9) {
 				break;
+			} else {
+				System.out.println("＊number_digitsの値が不正です。");
+				continue;
 			}
 		}
 
@@ -61,7 +62,7 @@ public class Main {
 
 		// ゲーム本編部分
 		while (true) {
-			System.out.println(number_digits + " 桁の数字を入力してください。");
+			System.out.println(">> " + number_digits + " 桁の数字を入力してください。");
 
 			// 文字入力
 			List<String> input_number_list = new ArrayList<String>();// ユーザ入力リスト
@@ -130,7 +131,7 @@ public class Main {
 				System.out.println("ゲームクリアおめでとう！");
 				System.out.println("試行回数は" + try_number + "回です。");
 				System.out.println();
-
+				break;
 			}
 			// 試行回数を増やす
 			try_number++;
